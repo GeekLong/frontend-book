@@ -6,7 +6,7 @@ Node 的安装非常简单，不同的平台有不同的安装包，[下载安�
 
 ```
 $ node -v
-v10.15.0
+v9.0.0
 ```
 
 ## Hello World
@@ -41,22 +41,182 @@ var http = require("http");
 ```
 var http = require("http");
 
-http.createServer((req, resp) => {
-    resp.write("<h1>Hello World!</h1>");
-    resp.end();
+http.createServer((request, response) => {
+
+    response.writeHead(200,{"Content-Type":"text/html;charset=UTF-8"});
+    
+    response.end("哈哈哈哈，我买了一个 iPhoneXS MAX");
+    
 }).listen(8888);
-```
-```
-var a = b;
-b=c;
 ```
 ### 启动服务
 
 ```
 $ node http.js
 ```
-此时在本地浏览器中打开：http://localhost:8888/ 即可看到页面上打印出`Hello World!`。
+此时在本地浏览器中打开：http://localhost:8888/ 即可看到页面上打印出 `哈哈哈哈，我买了一个 iPhoneXS MAX`。
+### Url 模块
+```
+url.parse() 解析 URL
 
+url.format(urlObject) //是上面 url.parse() 操作的逆向操作
+
+url.resolve(from, to)
+
+```
+### fs 模块
+```
+fs.stat 检测是文件还是目录
+  
+const fs = require('fs');
+fs.stat('hello.js', (error, stats) =>{ 
+if (error){
+	console .log(error) 
+} else {
+	console .log(stats)
+	console .log(`文件: ${stats.isFile()}` )
+	console .log(`目录: ${stats.isDirectory()}` 
+	)}
+})
+
+```
+```
+fs.mkdir 创建目录
+  
+const fs = require('fs');
+fs.mkdir('logs', (error) => { 
+if (error){
+	console .log(error) 
+} else {
+	console .log('成功创 建目录:logs' )
+}
+})
+
+```
+```
+fs.writeFile 创建写入文件
+  
+fs.writeFile('logs/hello.log', '您好 ~ \n', (error) => {
+if(error) {
+	console .log(error)
+} else {
+	console .log('成功写 入文件' )
+} 
+})
+
+```
+```
+fs.appendFile 追加文件
+  
+ fs.appendFile('logs/hello.log', 'hello ~ \n', (error) => { 
+ if(error) {
+	console .log(error) 
+ } else {
+	console .log('成功写 入文件' ) }
+})
+
+```
+```
+fs.readFile 读取文件
+  
+ const fs = require('fs');
+ fs.readFile('logs/hello.log', 'utf8', (error, data) =>{ 
+ if (error) {
+	console .log(error) 
+ } else {
+	console .log(data) 
+	}
+})
+
+```
+```
+fs.readdir 读取目录
+  
+const fs = require('fs')
+fs.readdir('logs', (error, files) => { 
+if (error) {
+	console .log(error)
+} else {
+	console .log(files)
+}
+})
+
+```
+```
+fs.rename 重命名
+  
+const fs = require('fs')
+fs.rename('js/hello.log', 'js/greeting.log', (error) =>{
+if (error) {
+	console .log(error)
+} else {
+	console .log(' 重命名成功' )
+} })
+ 
+
+```
+```
+fs.rmdir 删除目录
+  
+fs.rmdir('logs', (error) =>{
+if (error) {
+	console .log(error)
+} else { 
+	console.log('成功的删除了目录:logs')
+} })
+ 
+
+```
+```
+fs.unlink 删除文件
+  
+fs.unlink(`logs/${file}`, (error) => { 
+if (error) {
+	console .log(error) 
+} else {
+	console.log(`成功的删除了文件: ${file}`) }
+})
+ 
+
+```
+```
+fs.createReadStream 从文件流中读取数据
+  
+const fs = require('fs');
+var fileReadStream = fs.createReadStream('data.json');
+let count=0; var str='';
+fileReadStream.on('data', (chunk) => {
+	console.log(`${ ++count } 接收到:${chunk.length}`);
+	str +=chunk 
+})
+fileReadStream.on('end', () => { 
+	console.log('--- 结束 ---'); 
+	console .log(count );
+	console .log(str ); 
+})
+fileReadStream.on('error', (error) => { 
+	console .log(error)
+})
+
+
+```
+```
+fs.createWriteStream 写入文件
+  
+var fs = require("fs");
+var data = '我是从数据库获取的数据，我要保存起来';
+var writerStream = fs.createWriteStream('output.txt');
+writerStream .write(data ,'UTF8' );
+writerStream .end();
+writerStream.on('finish', function() {
+ 	console .log("写入完 成。" );
+});
+writerStream.on('error', function(err){
+	console.log(err.stack); });
+	console .log("程序执 行完毕" );
+});
+	
+```
 ### express 模块
 Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。
 
