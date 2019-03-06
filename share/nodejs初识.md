@@ -45,9 +45,11 @@ http.createServer((request, response) => {
 
     response.writeHead(200,{"Content-Type":"text/html;charset=UTF-8"});
     
-    response.end("哈哈哈哈，我买了一个 iPhoneXS MAX");
+    response.end("哈哈哈哈，我买了一个iPhoneXS MAX");
     
-}).listen(8888);
+}).listen(8888,()=>{
+	console.log('服务在8888端口启动');
+});
 ```
 ### 启动服务
 
@@ -88,7 +90,7 @@ fs.mkdir('logs', (error) => {
 if (error){
 	console .log(error) 
 } else {
-	console .log('成功创 建目录:logs' )
+	console .log('成功创建目录:logs' )
 }
 })
 
@@ -100,7 +102,7 @@ fs.writeFile('logs/hello.log', '您好 ~ \n', (error) => {
 if(error) {
 	console .log(error)
 } else {
-	console .log('成功写 入文件' )
+	console .log('成功写入文件' )
 } 
 })
 
@@ -112,7 +114,7 @@ fs.appendFile 追加文件
  if(error) {
 	console .log(error) 
  } else {
-	console .log('成功写 入文件' ) }
+	console .log('成功写入文件' ) }
 })
 
 ```
@@ -183,8 +185,11 @@ if (error) {
 fs.createReadStream 从文件流中读取数据
   
 const fs = require('fs');
+
 var fileReadStream = fs.createReadStream('data.json');
+
 let count=0; var str='';
+
 fileReadStream.on('data', (chunk) => {
 	console.log(`${ ++count } 接收到:${chunk.length}`);
 	str +=chunk 
@@ -209,11 +214,11 @@ var writerStream = fs.createWriteStream('output.txt');
 writerStream .write(data ,'UTF8' );
 writerStream .end();
 writerStream.on('finish', function() {
- 	console .log("写入完 成。" );
+ 	console .log("写入完成。" );
 });
 writerStream.on('error', function(err){
 	console.log(err.stack); });
-	console .log("程序执 行完毕" );
+	console .log("程序执行完毕" );
 });
 	
 ```
