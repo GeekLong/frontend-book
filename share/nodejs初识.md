@@ -26,7 +26,7 @@ Hello World!
 这样你就已经开始了第一个 Node 程序，其实 Node 是基于 V8 引擎，语言上就是 JavaScript，对于前端开发来说语法就不用多说了。
 
 ## 创建第一个应用
-Node 并不像 .NET 和 Java 这种服务端技术，.NET 和 Java 需要建立在 IIS 或者 Tomcat 这种 Web 容器下；然而 Node 和他们完全不同，它不仅要实现一个应用还要实现整个 HTTP 服务器。我们可以通过以下步骤来创建一个应用：
+Node 并不像 .NET 和 Java 这种服务端技术，.NET 和 Java 需要建立在 IIS 或者 Tomcat 这种 Web 容器下；然而 Node 和他们完全不同，它不仅实现了一个应用还实现了整个 HTTP 服务器。我们可以通过以下步骤来创建一个应用：
 
 ### 引入 HTTP 模块
 使用`require("http")`来载入 http 模块，并将实例化的 HTTP 赋值给变量 http：
@@ -242,8 +242,8 @@ app.get("/", function(req, resp) {
 
 app.get("/json", function(req, resp) {
     resp.json({
-        name: "jay",
-        age: 23
+        name: "yunlong",
+        age: 18
     });
 });
 
