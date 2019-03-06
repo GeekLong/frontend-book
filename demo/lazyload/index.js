@@ -15,11 +15,6 @@ function checkImgs() {
       index = i;
     }
   }
-  // Array.from(imgs).forEach(el => {
-  //   if (isInSight(el)) {
-  //     loadImg(el);
-  //   }
-  // })
 }
 
 function loadImg(el) {
