@@ -23,7 +23,7 @@ $ node hello.js
 Hello World!
 ```
 
-这样你就已经开始了第一个 Node 程序，其实 Node 是基于 V8 引擎，语言上就是 JavaScript，对于前端开发来说语法就不用多说了。
+这样你就已经开始了第一个 Node 程序，是不是很简单。
 
 ## 创建第一个应用
 Node 并不像 .NET 和 Java 这种服务端技术，.NET 和 Java 需要建立在 IIS 或者 Tomcat 这种 Web 容器下；然而 Node 和他们完全不同，它不仅实现了一个应用还实现了整个 HTTP 服务器。我们可以通过以下步骤来创建一个应用：
@@ -42,7 +42,7 @@ var http = require("http");
 var http = require("http");
 
 http.createServer((request, response) => {
-
+		//request 参数表示请求，response 表示响应
     response.writeHead(200,{"Content-Type":"text/html;charset=UTF-8"});
     
     response.end("哈哈哈哈，我买了一个iPhoneXS MAX");
@@ -50,6 +50,7 @@ http.createServer((request, response) => {
 }).listen(8888,()=>{
 	console.log('服务在8888端口启动');
 });
+
 ```
 ### 启动服务
 
@@ -58,12 +59,76 @@ $ node http.js
 ```
 此时在本地浏览器中打开：http://localhost:8888/ 即可看到页面上打印出 `哈哈哈哈，我买了一个 iPhoneXS MAX`。
 ### Url 模块
+
 ```
 url.parse() 解析 URL
 
-url.format(urlObject) //是上面 url.parse() 操作的逆向操作
+const url = require('url');
+url.parse('http://www.baidu.com?name=yunlong&age=28');
+//出现下面的结果
+Url {
+  protocol: 'http:',
+  slashes: true,
+  auth: null,
+  host: 'www.baidu.com',
+  port: null,
+  hostname: 'www.baidu.com',
+  hash: null,
+  search: '?name=yunlong&age=28',
+  query: 'name=yunlong&age=28',
+  pathname: '/',
+  path: '/?name=yunlong&age=28',
+  href: 'http://www.baidu.com/?name=yunlong&age=28'
+}
+url.parse('http://www.baidu.com?name=yunlong&age=28',true);
+//出现下面的结果
+Url {
+  protocol: 'http:',
+  slashes: true,
+  auth: null,
+  host: 'www.baidu.com',
+  port: null,
+  hostname: 'www.baidu.com',
+  hash: null,
+  search: '?name=yunlong&age=28',
+  query: { name: 'yunlong', age: '28' },
+  pathname: '/',
+  path: '/?name=yunlong&age=28',
+  href: 'http://www.baidu.com/?name=yunlong&age=28' 
+ }
+ 
+```
+```
 
-url.resolve(from, to)
+url.format(urlObject) // 是上面 url.parse() 操作的逆向操作
+
+url.format({
+  protocol: 'http:',
+  slashes: true,
+  auth: null,
+  host: 'www.baidu.com',
+  port: null,
+  hostname: 'www.baidu.com',
+  hash: null,
+  search: '?name=yunlong&age=28',
+  query: { name: 'yunlong', age: '28' },
+  pathname: '/',
+  path: '/?name=yunlong&age=28',
+  href: 'http://www.baidu.com/?name=yunlong&age=28' 
+ })
+ //出现下面的结果
+http://www.baidu.com/?name=yunlong&age=28
+
+```
+
+```
+url.resolve(from, to) // from 源地址，to需要添加或替换的标签
+
+var url = require('url');
+var a = url.resolve('/one/two/three', 'four') ;//one/two/four
+b = url.resolve('http://example.com/', '/one');//http://example.com/one
+c = url.resolve('http://example.com/one', '/two');//http://example.com/two
+
 
 ```
 ### fs 模块
