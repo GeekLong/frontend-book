@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .demo {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+    .demo1-1 {
+      float: left;
+      width: 200px;
+      height: 200px;
+    }
+    .zoomImage, .zoomImage2, .zoomImage3{
+      width: 100%;
+      height: 0;
+      padding-top: 100%;
+      overflow: hidden;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+    }
+    .zoomImage2 {
+      padding-top: 75%;
+    }
+    .zoomImage3 {
+      padding-top: 133.33%;
+    }
+  </style>
+</head>
+<body>
+  <h2>第一张图片633*950，第二张图片1280*800，第三张图片100*100</h2>
+  <div class="demo">
+    <h3>对上面的三张图片的宽和高分别等比例缩放到200*200像素(1:1)</h3>
+    <div class="demo1-1">
+      <div class="zoomImage" style="background-image: url(./images/1.jpg)"></div>
+    </div>
+    <div class="demo1-1">
+      <div class="zoomImage" style="background-image: url(./images/2.jpg)"></div>
+    </div>
+    <div class="demo1-1">
+      <div class="zoomImage" style="background-image: url(./images/3.png)"></div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <h3>对上面的三张图片的宽和高进行4:3的缩放</h3>
+    <div class="demo1-1">
+      <div class="zoomImage2" style="background-image: url(./images/1.jpg)"></div>
+    </div>
+    <div class="demo1-1">
+      <div class="zoomImage2" style="background-image: url(./images/2.jpg)"></div>
+    </div>
+    <div class="demo1-1">
+      <div class="zoomImage2" style="background-image: url(./images/3.png)"></div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <h3>对上面的三张图片的宽和高进行3:4的缩放</h3>
+    <div class="demo1-1">
+      <div class="zoomImage3" style="background-image: url(./images/1.jpg)"></div>
+    </div>
+    <div class="demo1-1">
+      <div class="zoomImage3" style="background-image: url(./images/2.jpg)"></div>
+    </div>
+    <div class="demo1-1">
+      <div class="zoomImage3" style="background-image: url(./images/3.png)"></div>
+    </div>
+  </div>
+</body>
+</html>
