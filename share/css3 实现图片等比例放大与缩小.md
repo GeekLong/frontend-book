@@ -147,7 +147,7 @@ background-size: cover;
 </html>
 ```
 
-[demo查看](http://www.baidu.com)
+[demo查看](https://github.com/GeekLong/frontend-book/blob/master/demo/resize-images/index.html)
 
 
 
