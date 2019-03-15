@@ -1,6 +1,6 @@
 # 前端知识储备
 ## Node
-* [初识 Nodejs](/share/Node/nodejs初识.md)
+* [初探 Nodejs](/share/Node/nodejs初探.md)
 * [PM2管理nodejs进程](/share/Node/PM2管理nodejs进程.md)
 ##  CSS
 * [css3 实现图片等比例放大与缩小](/share/CSS/css3%20实现图片等比例放大与缩小.md)
