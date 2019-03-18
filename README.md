@@ -5,7 +5,7 @@
 ##  CSS
 * [css3 实现图片等比例放大与缩小](/share/CSS/css3%20实现图片等比例放大与缩小.md)
 ## 深入浅出的webpack构建工具
-*  [webpack基本配置(一)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack基本配
+*  [webpack基本配置(一)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack基本配置(一).md)
 *  [webpack基本配置DevServer(二)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack基本配置DevServer(二).md)
 ## Git使用教程
 * [Git使用教程](/share/Git使用教程/Git使用教程.md)
