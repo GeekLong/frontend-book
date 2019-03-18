@@ -7,5 +7,6 @@
 ## 深入浅出的webpack构建工具
 *  [webpack基本配置(一)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack基本配置(一).md)
 *  [webpack基本配置DevServer(二)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack基本配置DevServer(二).md)
+*  [webpack babel之配置文件.babelrc(三)](/share/深入浅出的webpack构建工具---webpack基本配置/webpackbabel之配置文件.babelrc(三).md)
 ## Git使用教程
 * [Git使用教程](/share/Git使用教程/Git使用教程.md)
