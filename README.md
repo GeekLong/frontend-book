@@ -10,7 +10,7 @@
 *  [webpack babel之配置文件.babelrc(三)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20babel之配置文件.babelrc(三).md)
 * [webpack process.env.NODE_ENV详解(四)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20process.env.NODE_ENV详解(四).md)
 * [webpack DllPlugin DllReferencePlugin提高构建速度(五)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20DllPlugin%20DllReferencePlugin提高构建速度(五).md)
-* [webpack AutoDllPlugin插件(六)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20AutoDllPlugin插件(六).md)
+* [webpack AutoDllPlugin插件(六)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20AutoDllPlugin插件（六）.md)
 
 
 ## Git使用教程
