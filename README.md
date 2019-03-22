@@ -16,6 +16,8 @@
 * [webpack AutoDllPlugin插件(六)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20AutoDllPlugin插件（六）.md)
 * [webpack HappyPack优化构建(七)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20HappyPack优化构建(七).md)
 
+## Nginx
+* [nginx解决跨域问题](/share/nginx/nginx解决跨域问题.md)
 
 ## Git使用教程
 * [Git使用教程](/share/Git使用教程/Git使用教程.md)
