@@ -4,6 +4,7 @@
 * [PM2管理nodejs进程](/share/Node/PM2管理nodejs进程.md)
 ## JS
 * [JS日期格式化转换方法](/share/JS/JS日期格式化转换方法.md)
+* [ES6 Promise对象](/share/JS/ES6%20Promise对象.md)
 ##  CSS
 * [css3 实现图片等比例放大与缩小](/share/CSS/css3%20实现图片等比例放大与缩小.md)
 * [理解使用before，after伪类实现小三角形气泡框](/share/CSS/理解使用before，after伪类实现小三角形气泡框.md)
