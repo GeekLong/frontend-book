@@ -18,6 +18,7 @@
 
 ## Nginx
 * [nginx解决跨域问题](/share/Nginx/nginx解决跨域问题.md)
+* [nginx反向代理proxy_pass](/share/Nginx/nginx反向代理proxy_pass.md)
 
 ## Git使用教程
 * [Git使用教程](/share/Git使用教程/Git使用教程.md)
