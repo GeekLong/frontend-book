@@ -826,7 +826,7 @@ if (node.hasAttribute('v-bind')) {
 
 ```
 
-因此上面的 node 是 <input type="text" v-model='count' /> input中的node节点了，因此 node.value = this.data['count']; 因此 input框的值就更新了，同时 <div v-bind="count"></div> 该节点通过 node.innerHTML = this.data['count'] 这样的话，值也得到了更新了。
+因此上面的 node 是 ```<input type="text" v-model='count' />``` input中的node节点了，因此 node.value = this.data['count']; 因此 input框的值就更新了，同时 <div v-bind="count"></div> 该节点通过 node.innerHTML = this.data['count'] 这样的话，值也得到了更新了。
 
 6.对于页面中元素节点带有 @click这样的方法，也有判断，如下代码：
 
