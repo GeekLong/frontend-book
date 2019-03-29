@@ -7,6 +7,7 @@
 * [ES6 Promise对象](/share/JS/ES6%20Promise对象.md)
 * [深入理解Proxy及使用Proxy实现vue双向数据绑定](/share/JS/深入理解Proxy及使用Proxy实现vue双向数据绑定.md)
 * [深入理解Object.assign()](/share/JS/Object.assign().md)
+* [ES6](/share/JS/ES6.md)
 ##  CSS
 * [css3 实现图片等比例放大与缩小](/share/CSS/css3%20实现图片等比例放大与缩小.md)
 * [理解使用before，after伪类实现小三角形气泡框](/share/CSS/理解使用before，after伪类实现小三角形气泡框.md)
