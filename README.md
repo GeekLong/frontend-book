@@ -1,6 +1,7 @@
 # 前端知识储备
 ## Node
 * [初探 Nodejs](/share/Node/nodejs初探.md)
+* [理解koa2 之 async + await + promise](/share/Node/理解koa2 之 async + await + promise.md)
 * [PM2管理nodejs进程](/share/Node/PM2管理nodejs进程.md)
 ## JS
 * [JS日期格式化转换方法](/share/JS/JS日期格式化转换方法.md)
