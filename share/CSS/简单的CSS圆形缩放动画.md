@@ -33,7 +33,7 @@
       .circular i:after {
         content: '';
         transition: all .3s;
-        border-radius: 50%;
+        border-radius: 50%; 
         position: absolute;
         top: 0;
         left: 0;
