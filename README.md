@@ -5,6 +5,7 @@
 * [PM2管理nodejs进程](/share/Node/PM2管理nodejs进程.md)
 ## JS
 * [JS日期格式化转换方法](/share/JS/JS日期格式化转换方法.md)
+* [深入javascript之原型和原型链](/share/JS/深入javascript之原型和原型链.md)
 * [ES6 Promise对象](/share/JS/ES6%20Promise对象.md)
 * [深入理解Proxy及使用Proxy实现vue双向数据绑定](/share/JS/深入理解Proxy及使用Proxy实现vue双向数据绑定.md)
 * [深入理解Object.assign()](/share/JS/Object.assign().md)
