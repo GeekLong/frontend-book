@@ -2,7 +2,7 @@
 ## Node
 * [初探 Nodejs](/share/Node/nodejs初探.md)
 * [理解koa2 之 async + await + promise](/share/Node/理解koa2%20之%20async%20%2B%20await%20%2B%20promise.md)
-* [PM2管理nodejs进程](/share/Node/PM2管理nodejs进程.md)理解koa-router 路由一般使用
+* [PM2管理nodejs进程](/share/Node/PM2管理nodejs进程.md)
 * [理解koa-router 路由一般使用](/share/Node/理解koa-router%20路由一般使用.md)
 ## JS
 * [JS日期格式化转换方法](/share/JS/JS日期格式化转换方法.md)
