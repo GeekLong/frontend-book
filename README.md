@@ -24,6 +24,7 @@
 * [webpack DllPlugin DllReferencePlugin提高构建速度(五)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20DllPlugin%20DllReferencePlugin提高构建速度(五).md)
 * [webpack AutoDllPlugin插件(六)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20AutoDllPlugin插件（六）.md)
 * [webpack HappyPack优化构建(七)](/share/深入浅出的webpack构建工具---webpack基本配置/webpack%20HappyPack优化构建(七).md)
+* [webpack prerender-spa-plugin 来进行SEO优化（八）](/share/深入浅出的webpack构建工具---webpack基本配置/webpack中插件%20prerender-spa-plugin%20来进行SEO优化（八）.md)
 
 ## Nginx
 * [nginx解决跨域问题](/share/Nginx/nginx解决跨域问题.md)
@@ -31,3 +32,4 @@
 
 ## Git使用教程
 * [Git使用教程](/share/Git使用教程/Git使用教程.md)
+
