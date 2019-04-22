@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum=1.0,maximum=1.0,user-scalable=no"/>
+  <title>Demo</title>
+</head>
+<style type="text/css">
+    .backStyle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: rgba(22,46,120,1);
+    }
+</style>
+<body>
+<canvas id='snowFall' class="backStyle"></canvas>
+<script src="./js/stats.js"></script>
+<script>
+    let stats = new Stats();
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.right = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild( stats.domElement );
+
+    function preloadImg(srcArr){
+        if(srcArr instanceof Array){
+            for(let i = 0; i < srcArr.length; i++){
+                let oImg = new Image();
+                oImg.src = srcArr[i];
+            }
+        }
+    }
+
+    preloadImg([
+      './img/snow_(1).png',
+      './img/snow_(2).png',
+      './img/snow_(3).png',
+      './img/snow_(4).png',
+      './img/snow_(5).png',
+      './img/snow_(6).png',
+      './img/snow_(7).png',
+      './img/snow_(8).png',
+      './img/snow_(9).png',
+      './img/snow_(10).png'
+    ]);
+
+    let snowBox = function () {
+        let canvasEl = document.getElementById("snowFall");
+        let ctx = canvasEl.getContext('2d');
+        canvasEl.width = window.innerWidth;
+        canvasEl.height = window.innerHeight;
+        let lineList = []; // 雪的容器
+        let snow = function () {
+            let _this = this;
+            _this.cacheCanvas = document.createElement("canvas");
+            _this.cacheCtx = _this.cacheCanvas.getContext("2d");
+            _this.cacheCanvas.width = 10;
+            _this.cacheCanvas.height = 10;
+            _this.speed = [1, 1.5, 2][Math.floor(Math.random()*3)];                // 雪花下落的三种速度，便于取整
+            _this.posx = Math.round(Math.random() * canvasEl.width);               // 雪花x坐标
+            _this.posy = Math.round(Math.random() * canvasEl.height);              // 雪花y坐标
+            _this.img = `./img/snow_(${Math.ceil(Math.random() * 9)}).png`;        // img
+            _this.w = _this.getInt(5 + Math.random() * 6);
+            _this.h = _this.getInt(5 + Math.random() * 6);
+            _this.cacheSnow();
+        };
+
+        snow.prototype = {
+            cacheSnow: function () {
+                let _this = this;
+                // _this.cacheCtx.save();
+                let img = new Image();   // 创建img元素
+                img.src = _this.img;
+                _this.cacheCtx.drawImage(img, 0, 0, _this.w, _this.h);
+                // _this.cacheCtx.restore();
+            },
+            fall: function () {
+                let _this = this;
+                if (_this.posy > canvasEl.height + 5) {
+                    _this.posy = _this.getInt(0 - _this.h);
+                    _this.posx = _this.getInt(canvasEl.width * Math.random());
+                }
+                if (_this.posx > canvasEl.width + 5) {
+                    _this.posx = _this.getInt(0 - _this.w);
+                    _this.posy = _this.getInt(canvasEl.height * Math.random());
+                }
+                // 如果雪花在可视区域
+                if (_this.posy <= canvasEl.height || _this.posx <= canvasEl.width) {
+                    _this.posy = _this.posy + _this.speed;
+                    _this.posx = _this.posx + _this.speed * .5;
+                }
+                _this.paint();
+            },
+            paint: function () {
+                ctx.drawImage(this.cacheCanvas, this.posx, this.posy)
+            },
+            getInt: function(num){
+                let rounded;
+                rounded = (0.5 + num) | 0;
+                return rounded;
+            }
+        };
+
+        let control;
+        control = {
+            start: function (num) {
+                for (let i = 0; i < num; i++) {
+                    let s = new snow();
+                    lineList.push(s);
+                }
+                (function loop() {
+                    ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+                    for (let i = 0; i < num; i++) {
+                        lineList[i].fall();
+                    }
+                    stats.update();
+                    requestAnimationFrame(loop)
+                })();
+            }
+        };
+        return control;
+    }();
+
+    window.onload = function(){
+        snowBox.start(80)
+    };
+
+    window.requestAnimationFrame = (function(){
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {window.setTimeout(callback, 1000 / 60); };
+    })();
+
+</script>
+</body>
+</html>
