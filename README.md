@@ -13,7 +13,7 @@
 * [ES6](/share/JS/ES6.md)
 
 ## VUE
-* [了解vue this.$toast()](/share/JS/了解vue%20this.$toast().md)
+* [了解vue this.$toast()](/share/VUE/了解vue%20this.%24toast().md)
 
 ##  CSS
 * [css3 实现图片等比例放大与缩小](/share/CSS/css3%20实现图片等比例放大与缩小.md)
