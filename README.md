@@ -40,3 +40,5 @@
 
 ## API
 * [分享8个有趣且实用的API](/share/API/分享8个有趣且实用的API.md)
+
+* [HTML5网页录音和上传到服务器，支持PC、Android，支持IOS微信](/share/API/HTML5网页录音和上传到服务器，支持PC、Android，支持IOS微信.md)
