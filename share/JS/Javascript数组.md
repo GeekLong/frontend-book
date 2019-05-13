@@ -51,7 +51,6 @@ const numbers = [1, 2, 3, 4, 5, 6]
 const oddNumbers = numbers.filter(n => n % 2 !== 0)
 console.log(oddNumbers) // [1, 3, 5]
 
-
 ```
 
 或者你可以在数组中移除特殊的项：
