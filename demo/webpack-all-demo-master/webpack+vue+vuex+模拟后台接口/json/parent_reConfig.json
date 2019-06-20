@@ -1,0 +1,11 @@
+{
+  "data": [{
+      "bTableName": "reconfig",
+      "businessCode": "reconfig",
+      "businessImportImpl": "reconfig",
+      "businessImportMethod": "reconfig",
+      "businessName": "reconfig"
+    }
+  ],
+  "code": 0
+}

@@ -1,0 +1,35 @@
+{
+    "data": [{
+        "assignerId": 55,
+        "assignerName": "仲宣",
+        "auditStatus": 20,
+        "auditTime": "2018-05-08 16:56:02",
+        "borrowerIdCard": "130204199812050027",
+        "borrowerName": "张小红",
+        "borrowerSign": "电信白名单用户",
+        "id": 1,
+        "loanAmount": 3500,
+        "loanPeriod": "12",
+        "loanRate": 21.5,
+        "loanTime": "2018-05-07 19:27:17",
+        "loanUsage": "购物消费",
+        "occurDate": 20180507,
+        "orderId": "20180507175020345000034567893",
+        "processInstanceId": 302,
+        "taskId": 326,
+        "prodName": "有借有还",
+        "taskName": "人工审核",
+        "userId": "68"
+    }],
+    "page": {
+        "curPage": 1,
+        "pageSize": 15
+    },
+    "query": {
+        "assignerId": 55,
+        "egtCreateTime": "2018-04-25 10:10:45",
+        "isAssigned": 0
+    },
+    "code": 0,
+    "message": "查询成功"
+}

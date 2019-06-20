@@ -1,0 +1,31 @@
+vender(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+border-radius()
+  vender('border-radius', arguments)
+
+box-shadow()
+  vender('box-shadow', arguments)
+
+opacity(n)
+  opacity n
+  if support-for-ie
+    filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
+
+transition()
+  vender('transition', arguments)
+
+transform()
+  vender('transform', arguments)
+
+box-sizing()
+  vender('box-sizing', arguments)
+  
+animation() 
+  vender('animation', arguments)
+  
+body
+  padding 0
+  margin 0

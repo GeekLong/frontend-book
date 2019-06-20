@@ -1,0 +1,203 @@
+.tb-table
+  position relative
+  width 100%
+  max-width 100%
+  border-collapse collapse
+  border 1px solid #dfe6ec
+  border-bottom none
+  border-spacing 0
+  background-color #fff
+  overflow: hidden
+
+.tb-table,
+.tb-table-body,
+.tb-table-head
+  background-color: #fff;
+  table-layout: fixed;
+  border-collapse: collapse
+  
+.tb-table-body tr th,
+.tb-table-head tr th,
+.tb-table tr th
+  background-color: #f2f2f2
+
+.tb-table-body tr td,
+.tb-table-body tr th,
+.tb-table-head tr td,
+.tb-table-head tr th,
+.tb-table tr td,
+.tb-table tr th
+  -webkit-transition background-color .25s ease
+  -moz-transition background-color .25s ease
+  transition background-color .25s ease
+  border-bottom 1px solid #dfe6ec
+  text-overflow ellipsis;
+  vertical-align middle;
+  padding 10px
+  text-align left
+
+.tb-table-body tr td .cell,
+.tb-table-body tr th .cell,
+.tb-table-head tr td .cell,
+.tb-table-head tr th .cell,
+.tb-table tr td .cell,
+.tb-table tr th .cell
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+  text-overflow ellipsis
+  white-space normal
+  word-break break-all
+  padding-right 10px
+  padding-left 2px
+  overflow hidden
+
+.tb-table-body tr td .cell span,
+.tb-table-body tr th .cell span,
+.tb-table-head tr td .cell span,
+.tb-table-head tr th .cell span,
+.tb-table tr td .cell span,
+.tb-table tr th .cell span
+  padding-right 8px
+  cursor pointer
+
+.tb-table-body-wrapper,
+.tb-table-head-wrapper
+  position relative
+  width 100%
+
+.tb-table-fixed-head
+  border-bottom 1px solid #dfe6ec
+  overflow hidden
+  .tb-table-body-wrapper
+    overflow-y auto
+
+.tb-table-fixed-col
+  overflow auto
+
+.hidden
+  visibility: hidden
+
+.tb-table-fixed-col-left,
+.tb-table-fixed-col-right
+  position absolute
+  top 0
+  left 0
+  -webkit-box-shadow 1px 0 8px #d3d4d6
+  -moz-box-shadow 1px 0 8px #d3d4d6
+  box-shadow 1px 0 8px #d3d4d6
+  content ""
+  overflow hidden
+
+.tb-table-fixed-col-left, 
+.tb-table-fixed-col-right
+  .tb-table-fixed-body-wrapper,
+  .tb-table-fixed-head-wrapper
+    position absolute
+    top 0
+    z-index 3
+    left 0 
+    table 
+      width 100%
+      table-layout fixed
+  .tb-table-fixed-body-wrapper,
+  .tb-table-fixed-body-wrapper
+    top 39px
+    overflow hidden
+
+.tb-table-fixed-col-right
+  position absolute
+  right 0
+  left auto
+  top 0
+  -webkit-box-shadow -1px 0 8px #d3d4d6
+  -moz-box-shadow -1px 0 8px #d3d4d6
+  box-shadow -1px 0 8px #d3d4d6
+  z-index 1111
+  .tb-table-fixed-body-wrapper,
+  .tb-table-fixed-head-wrapper
+    left auto
+    right 0
+  .tb-table-fixed-body-wrapper td.hover-row,
+  .tb-table-fixed-body-wrapper td.hover-row
+    background: #eef1f6
+
+.tb-table-fixed-col-header 
+  .tb-table-head-wrapper
+    overflow: hidden
+
+.tb-table-fixed-col-header-container .tb-table-fixed-col-right {
+    right: 15px
+}
+
+.tb-table-fixed-col-header-container .tb-table-fixed-body-wrapper {
+    overflow: hidden
+}
+
+.tb-table-fixed-right-patch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #f2f2f2;
+    overflow: hidden
+}
+
+.tb-table-fixed-head .tb-table-body-wrapper tr:last-child td {
+    border-bottom: none
+}
+
+.tb-table-head-wrapper {
+    overflow: hidden
+}
+
+.tb-table .hidden-columns {
+    visibility: hidden;
+    position: absolute;
+    top: 39px;
+    right: 0;
+    z-index: -1;
+    overflow: hidden
+}
+
+.tb-table .hidden-columns .tb-table-column:last-child {
+    display: inline-block
+}
+
+.tb-table .hidden-columns .item {
+    padding-left: 12px
+}
+
+.tb-table .hidden-columns .item span {
+    display: inline-block;
+    cursor: pointer;
+    color: #0a73c7
+}
+
+.tb-table-column,.tb-table-column .item {
+    width: 100%;
+    overflow: hidden
+}
+
+.tb-table.tb-table-border th {
+    border-right: 1px solid #dfe6ec
+}
+
+.tb-table.tb-table-border th:last-child {
+    border-right: none
+}
+
+.tb-table.tb-table-border td {
+    border-right: 1px solid #dfe6ec
+}
+
+.tb-table.tb-table-border td:last-child {
+    border-right: none
+}
+
+.tb-table.tb-table-stripe tr:nth-child(2n) {
+    background-color: #fafafa
+}
+
+.tb-table.tb-table-hover tr:hover {
+    background-color: #ecf9ff!important
+}

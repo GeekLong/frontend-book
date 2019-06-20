@@ -1,0 +1,11 @@
+{
+  "data": [{
+      "bTableName": "reconlist",
+      "businessCode": "reconlist",
+      "businessImportImpl": "reconlist",
+      "businessImportMethod": "reconlist",
+      "businessName": "reconlist"
+    }
+  ],
+  "code": 0
+}

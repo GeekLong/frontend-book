@@ -1,0 +1,11 @@
+{
+  "data": [{
+      "bTableName": "reGroup",
+      "businessCode": "reGroup",
+      "businessImportImpl": "reGroup",
+      "businessImportMethod": "reGroup",
+      "businessName": "reGroup"
+    }
+  ],
+  "code": 0
+}

@@ -1,0 +1,132 @@
+
+
+gridColumns = 24
+
+// clear
+clearfix = ('.clearfix' '.tb-row')
+
+for n in clearfix
+  {n}:before,{n}:after
+    display table
+    content " "
+  {n}:after
+    clear both
+    
+// 栅格
+gridSetDefault()
+  for n in (0..gridColumns)
+    .tb-col-{n}
+      width (100% / gridColumns) * n
+    .tb-col-offset-{n}
+      margin-left (100% / gridColumns) * n
+    .tb-col-pull-{n}
+      right (100% / gridColumns) * n
+    .tb-col-push-{n}
+      left (100% / gridColumns) *n 
+      
+gridSet(type)
+  for n in (0..gridColumns)
+    .tb-col-{type}-{n}
+      width (100% / gridColumns) * n
+    .tb-col-{type}-offset-{n}
+      margin-left (100% / gridColumns) * n
+    .tb-col-{type}-pull-{n}
+      right (100% / gridColumns) * n
+    .tb-col-{type}-push-{n}
+      left (100% / gridColumns) * n
+
+for n in (1..gridColumns)
+  .tb-col-{n}
+  .tb-col-xs-{n}, 
+  .tb-col-sm-{n}, 
+  .tb-col-md-{n}, 
+  .tb-col-lg-{n}
+    position relative
+    min-height 1px
+    float left
+    width 100%
+
+gridSetDefault()
+   
+@media (max-width: 768px)
+  gridSet(xs)
+@media (min-width: 768px)
+  gridSet(sm)
+@media (min-width: 992px)
+  gridSet(md)
+@media (min-width: 1200px)
+  gridSet(lg)
+     
+// margin & padding set
+for n in (0..12)
+  .tb-m-r-{n*5}
+    margin-right n*5px !important
+  .tb-m-l-{n*5}
+    margin-left n*5px !important
+  .tb-m-b-{n*5}
+    margin-bottom n*5px !important
+  .tb-m-t-{n*5}
+    margin-top n*5px !important
+  .tb-m-{n*5}
+    margin n*5px !important
+  .tb-p-r-{n*5}
+    padding-right n*5px !important
+  .tb-p-l-{n*5}
+    padding-left n*5px !important
+  .tb-p-b-{n*5}
+    padding-bottom n*5px !important
+  .tb-p-t-{n*5}
+    padding-top n*5px !important
+  .tb-p-{n*5}
+    padding n*5px !important
+
+// text-align
+aligns = (left center right)
+for align in aligns
+  .tb-text-align-{align}
+    text-align align
+  .tb-float-{align}
+    float align
+
+
+*
+  box-sizing border-box
+
+:before,:after
+  box-sizing border-box
+
+html
+  font-size 10px
+  -webkit-tap-highlight-color rgba(0,0,0,0)
+
+body
+  font-family roboto
+  font-size 13px
+  line-height 1.42857143
+  color #5e5e5e
+  background-color #edecec
+
+input,button,select,textarea
+  font-family inherit
+  font-size inherit
+  line-height inherit
+
+a
+  color #2196f3
+  text-decoration none
+
+a:hover,a:focus
+  color #0a6ebd
+  text-decoration none
+
+a:focus
+  outline thin dotted
+  outline 5px auto -webkit-focus-ring-color
+  outline-offset -2px
+  outline none!important
+
+figure
+  margin 0
+
+img
+  vertical-align middle

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript" src='https://unpkg.com/vue/dist/vue.js'></script>
+  <script type="text/javascript" src='https://unpkg.com/vuex@3.0.1/dist/vuex.js'></script>
+</head>
+<body>
+  <div id='app'>
+    <xxx></xxx>
+  </div>
+  <script type="text/javascript">
+    Vue.use(Vuex); // 使用vuex
+    var myStore = new Vuex.Store({
+      // state是存储状态 定义应用状态全局的数据结构
+      state: {
+        name: 'kongzhi',
+        todoLists: [],
+        // 添加count字段
+        count: 1
+      },
+      /*
+        mutations是提交状态修改，也就是set、get中的set，这是vuex中唯一修改state的方式，但是不支持异步操作。
+        每个mutation都有一个字符串的事件类型(type)和一个回调函数(handler)
+        第一个参数默认是state，外部调用方式为：store.commit('SET_AGE', 30).
+      */
+      mutations: {
+        // 新增list
+        ADDLIST(state, item) {
+          console.log(state.todoLists);
+          state.todoLists.push(item);
+        },
+        // 删除list中的项
+        DELLIST(state, index) {
+          state.todoLists.splice(index, 1);
+        },
+        // 设置 错误提示信息
+        SETERROR(state, msg) {
+          state.message = msg;
+        },
+        // 异步操作count
+        COUNTASYNC(state, param) {
+          console.log(state.count += param);
+        }
+      },
+      /*
+        getters是从state中派生出状态的。也就是set、get中的get，它有两个可选的参数，state和getters，
+        分别可以获取state中的变量和其他的getters。外部调用的方式：store.getters.todoCount()
+      */
+      getters: {
+        todoCount(state) {
+          return state.todoLists.length;
+        }
+      },
+      /*
+       和上面的mutations类似，但是actions支持异步操作的，外部调用方式为：store.dispatch('nameAction')
+       常见的使用是：从服务器端获取数据，在数据获取完成后会调用 store.commit()来更改Store中的状态。
+       Action函数接收一个与store实列具有相同方法和属性的context对象，因此我们可以使用 context.commit 提交一个
+       mutation，或者通过 context.state 和 context.getters来获取state和getters
+      */
+      actions: {
+        addList(context, item) {
+          if (item) {
+            context.commit('ADDLIST', item);
+            context.commit('SETERROR', '');
+          } else {
+            context.commit('SETERROR', '添加失败');
+          }
+        },
+        delList(context, index) {
+          context.commit('DELLIST', index);
+          context.commit('SETERROR', '删除成功');
+        },
+        // 设置延时来演示一下异步提交
+        addFunc(context, value) {
+          console.log(context);
+          setTimeout(function(){
+            // 异步提交 actions操作Mutations
+            context.commit('COUNTASYNC', value);
+          }, 100);
+        }
+      },
+      /*
+       modules 对象允许将单一的Store拆分为多个Store的同时保存在单一的状态树中。
+      */
+      modules: {
+
+      }
+    });
+    // 注册vue组件 xxx
+    Vue.component('xxx', {
+      template: 
+        `<div>
+          {{name}}, 总数：{{todoCount}} 
+          <span @click='addList'>点击改变总数</span>
+          <button @click='addFuncAnsyc'>点击我actions改变数据</button>
+        </div>`,
+      computed: {
+        name: function() {
+          return this.$store.state.name;
+        },
+        todoCount: function() {
+          return this.$store.getters.todoCount;
+        }
+      },
+      mounted: function() {
+        console.log(this);
+      },
+      data: function() {
+        return {
+          count: 0
+        }
+      },
+      methods: {
+        addList: function() {
+          var count = this.count++;
+          this.$store.commit('ADDLIST', count);
+        },
+        addFuncAnsyc: function() {
+          this.$store.dispatch('addFunc', 1);
+        }
+      }
+    });
+    new Vue({
+      el: '#app',
+      data: {
+        name: 'init name'
+      },
+      store: myStore,
+      mounted: function() {
+        console.log(this);
+      }
+    })
+  </script>
+</body>
+</html>
