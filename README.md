@@ -39,6 +39,7 @@
 ## Nginx
 * [nginx解决跨域问题](/share/Nginx/nginx解决跨域问题.md)
 * [nginx反向代理proxy_pass](/share/Nginx/nginx反向代理proxy_pass.md)
+* [Nginx上部署vue项目（history模式）](/share/Nginx/Nginx上部署vue项目（history模式）.md)
 
 ## Git使用教程
 * [Git使用教程](/share/Git使用教程/Git使用教程.md)
